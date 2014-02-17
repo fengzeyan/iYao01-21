@@ -4,7 +4,7 @@
     <Files>
       <File FileName="UIViewControllers/MessageManagementViewController.cs" Line="1" Column="1" />
       <File FileName="UIViewControllers/MessageViewController.cs" Line="1" Column="1" />
-      <File FileName="DataSource/MessageTableViewSource.cs" Line="52" Column="29" />
+      <File FileName="DataSource/MessageTableViewSource.cs" Line="62" Column="4" />
       <File FileName="UIViewControllers/MainPageViewContorller.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
