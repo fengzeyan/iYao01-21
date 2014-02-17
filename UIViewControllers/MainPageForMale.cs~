@@ -1,0 +1,121 @@
+using System;
+using System.Drawing;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using SDWebImage;
+using System.Threading.Tasks;
+using System.Linq;
+
+namespace iYao
+{
+	public partial class MainPageForMale : UIViewController
+	{
+		public MainPageForMale () : base ("MainPageForMale", null)
+		{
+		}
+
+		public override UIStatusBarStyle PreferredStatusBarStyle ()
+		{
+			return UIStatusBarStyle.LightContent;
+		}
+
+		public override void DidReceiveMemoryWarning ()
+		{
+			// Releases the view if it doesn't have a superview.
+			base.DidReceiveMemoryWarning ();
+			
+			// Release any cached data, images, etc that aren't in use.
+		}
+
+		Task LoadDataTask;
+
+		void LoadBadgeView()
+		{
+
+			UILabel v = new UILabel ();
+			v.Frame = new RectangleF (180,177,45,20);
+			v.Layer.MasksToBounds = true;
+			v.Layer.CornerRadius = 10;
+			v.TextColor = UIColor.White;
+			v.Text = 7.ToString();
+			v.TextAlignment = UITextAlignment.Center;
+			v.BackgroundColor = UIColor.FromRGB(27,36,18);
+			this.View.AddSubview (v);
+
+		}
+
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			LoadDataTask = Task.Factory.StartNew (() => {
+			});
+			LoadBadgeView ();
+			UIView rightView = new UIView ();
+			rightView.Frame = new RectangleF (240,0,80,UIScreen.MainScreen.Bounds.Height);
+			rightView.BackgroundColor = UIColor.FromRGB (27,36,18);
+			this.View.AddSubview (rightView);
+
+			this.View.BackgroundColor = UIColor.FromRGB (225, 235, 137);
+			InvokeInBackground (() => {
+				try {
+					Common.InitServerConnection ();
+
+					var userFriends = AppDelegate.web.GetMyUsers_rel (AppDelegate.currentUser.idstr);
+					if (userFriends != null) {
+						foreach (var item in userFriends) {
+							var c = Common.GetContactsFromUsers (item);
+							Contacts c1 = AppDelegate.db.QueryAsync<Contacts > ("SELECT * FROM Contacts WHERE (id=?)", item.idstr).Result.FirstOrDefault ();
+							if (c1 != null) {
+								AppDelegate.db.UpdateAsync (c);
+							}else
+							{
+								AppDelegate.db.InsertAsync(c);
+							}
+						}
+					}
+
+				} catch (Exception ex) {
+					Console.WriteLine ("Server Connection Error " + ex.ToString ());
+				}
+			});
+//			Common.InitServerConnection ();
+			this.lblName.Text = AppDelegate.currentUser.name;
+			this.imgUserCover.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+	
+			imgUserCover.Layer.MasksToBounds = true;
+			imgUserCover.Layer.CornerRadius = imgUserCover.Frame.Width / 2;
+
+
+			this.imgjmrw.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+			this.imgssgz.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+			this.imgszzx.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+			this.imgwdgz.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+			this.imgxxxx.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+
+			btnSetting.TouchUpInside += GotoSettingViewController;
+			btnMyFriends.TouchUpInside += GotoMyFriendsViewController;
+			this.btnShowAllRecruit.TouchUpInside += ShowAllRecruitViewController; 
+			// Perform any additional setup after loading the view, typically from a nib.
+		}
+
+		void GotoMyFriendsViewController (object sender, EventArgs e)
+		{
+			MyFirendsViewController mmvc = new MyFirendsViewController ();
+			this.PresentViewController (mmvc, true, null);
+		}
+
+		void GotoSettingViewController (object sender, EventArgs e)
+		{
+			SettingViewController mmvc = new SettingViewController ();
+			this.PresentViewController (mmvc, true, null);
+		}
+
+		void ShowAllRecruitViewController (object sender, EventArgs e)
+		{
+			AllRecruitViewControllerForMale viewController = new AllRecruitViewControllerForMale ();
+			this.PresentViewController (viewController, true, null);
+		}
+	}
+}
+

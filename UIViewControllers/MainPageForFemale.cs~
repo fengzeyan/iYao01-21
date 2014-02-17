@@ -1,0 +1,125 @@
+using System;
+using System.Drawing;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using SDWebImage;
+using Newtonsoft.Json;
+using System.Linq;
+
+namespace iYao
+{
+	public partial class MainPageForFemale : UIViewController
+	{
+		public MainPageForFemale () : base ("MainPageForFemale", null)
+		{
+		}
+
+		public override void DidReceiveMemoryWarning ()
+		{
+			// Releases the view if it doesn't have a superview.
+			base.DidReceiveMemoryWarning ();
+
+			// Release any cached data, images, etc that aren't in use.
+		}
+
+		public override void ViewDidLoad ()
+		{
+
+			base.ViewDidLoad ();
+
+			UIView rightView = new UIView ();
+			rightView.Frame = new RectangleF (240, 0, 80, UIScreen.MainScreen.Bounds.Height);
+			rightView.BackgroundColor = UIColor.FromRGB (116, 19, 51);
+			this.View.AddSubview (rightView);
+
+
+			this.View.BackgroundColor = UIColor.FromRGB (216, 109, 98);
+			InvokeInBackground (() => {
+				try {
+					Common.InitServerConnection ();
+
+					var userFriends = AppDelegate.web.GetMyUsers_rel (AppDelegate.currentUser.idstr);
+					if (userFriends != null) {
+						foreach (var item in userFriends) {
+							var c = Common.GetContactsFromUsers (item);
+							Contacts c1 = AppDelegate.db.QueryAsync<Contacts > ("SELECT * FROM Contacts WHERE (id=?)", item.idstr).Result.FirstOrDefault ();
+							if (c1 != null) {
+								AppDelegate.db.UpdateAsync (c);
+							} else {
+								AppDelegate.db.InsertAsync (c);
+							}
+						}
+					}
+
+				} catch (Exception ex) {
+					Console.WriteLine ("Server Connection Error " + ex.ToString ());
+				}
+			});
+			this.lblName.Text = AppDelegate.currentUser.name;
+			this.imgUserCover.SetImage (new NSUrl (AppDelegate.currentUser.profile_image_url), null, null);
+			btnRecruited.TouchUpInside += ShowRecruitedViewController;
+
+			btnMessageManagement.TouchUpInside += GotoMessagesManagement;
+
+			btnSetting.TouchUpInside += GotoSettingViewController;
+
+			btnSearch.TouchUpInside += GotoSearchViewController;
+
+//			btnMyFirends.TouchUpInside += GotoMyFirendsViewController;
+
+//			btnMyFirends.SetTitleColor (UIColor.FromRGB (115, 19, 50), UIControlState.Normal);
+			btnSearch.SetTitleColor (UIColor.FromRGB (115, 19, 50), UIControlState.Normal);
+			btnSetting.SetTitleColor (UIColor.FromRGB (115, 19, 50), UIControlState.Normal);
+			btnRecruited.SetTitleColor (UIColor.FromRGB (115, 19, 50), UIControlState.Normal);
+			btnMessageManagement.SetTitleColor (UIColor.FromRGB (115, 19, 50), UIControlState.Normal);
+
+			// Perform any additional setup after loading the view, typically from a nib.
+		}
+
+		void GotoMyFirendsViewController (object sender, EventArgs e)
+		{
+			MyFirendsViewController mmvc = new MyFirendsViewController ();
+			this.PresentViewController (mmvc, true, null);
+		}
+
+		void GotoSearchViewController (object sender, EventArgs e)
+		{
+
+		}
+
+		void GotoSettingViewController (object sender, EventArgs e)
+		{
+			SettingViewController mmvc = new SettingViewController ();
+			this.PresentViewController (mmvc, true, null);
+		}
+
+		void GotoMessagesManagement (object sender, EventArgs e)
+		{
+			MessageManagementViewController mmvc = new MessageManagementViewController ();
+			this.PresentViewController (mmvc, true, null);
+		}
+
+		public void SetMessageTitle ()
+		{
+			InvokeOnMainThread (delegate {
+//				btnMessageManagement.SetTitle ("消息中心21312",UIControlState.Normal);
+				foreach (var item in  btnMessageManagement.Subviews) {
+					BadgeView b = item as BadgeView;
+					if (b != null) {
+						item.RemoveFromSuperview ();
+						item.Dispose ();
+					}
+				}
+				BadgeView bv = new BadgeView (new RectangleF (btnMessageManagement.Frame.Width - 10, btnMessageManagement.Frame.Height - 10, 20, 20), (Common.toUserMessageCount + Common.recommendMessageCount + Common.systemMessageCount).ToString ());
+				btnMessageManagement.AddSubview (bv);
+			});
+		}
+
+		void ShowRecruitedViewController (object sender, EventArgs e)
+		{
+			MyRecruitedViewController viewC = new MyRecruitedViewController ();
+			this.PresentViewController (viewC, true, null);
+		}
+	}
+}
+

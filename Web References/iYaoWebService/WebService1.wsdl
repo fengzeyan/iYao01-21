@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="UserReg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="u" type="tns:Users" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="Users">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="1" name="idstr" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="screen_name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="profile_image_url" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="gender" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="verified" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="verified_reason" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="nickName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="location" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="company" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="school" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="age" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="sign" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ImageList" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LastLoginTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:double" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserRegResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="UserRegResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserInfoByID">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUserInfoByIDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetUserInfoByIDResult" type="tns:Users" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateUserInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="u" type="tns:Users" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateUserInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="UpdateUserInfoResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateLatitudeAndLongitude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="latitude" type="xs:double" />
+            <xs:element minOccurs="1" maxOccurs="1" name="longitude" type="xs:double" />
+            <xs:element minOccurs="0" maxOccurs="1" name="userID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateLatitudeAndLongitudeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="UpdateLatitudeAndLongitudeResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllRecruits">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetAllRecruitsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetAllRecruitsResult" type="tns:ArrayOfRecruit" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfRecruit">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Recruit" nillable="true" type="tns:Recruit" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Recruit">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="rid" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PublishTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="EffectiveTime" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PublishUser" type="tns:Users" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:double" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Target" type="tns:RecruitTarget" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EnlistUser" type="tns:ArrayOfUsers" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecruitTarget">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RecruitTargetDisplayName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RecruitTargetID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfUsers">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Users" nillable="true" type="tns:Users" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AddRecruit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="r" type="tns:Recruit" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddRecruitResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AddRecruitResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMyRecruits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="u" type="tns:Users" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMyRecruitsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetMyRecruitsResult" type="tns:ArrayOfRecruit" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddOrUpdateUsers_rel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userID" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="friendID" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="rel" type="tns:RelationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:simpleType name="RelationType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="stranger" />
+          <xs:enumeration value="friends" />
+          <xs:enumeration value="blacklist" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AddOrUpdateUsers_relResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AddOrUpdateUsers_relResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMyUsers_rel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMyUsers_relResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetMyUsers_relResult" type="tns:ArrayOfUsers" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DelUsers_rel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userID" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="friendID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DelUsers_relResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="DelUsers_relResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUsers_rel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userID" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="friendID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUsers_relResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="GetUsers_relResult" type="tns:RelationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="UserRegSoapIn">
+    <part name="parameters" element="tns:UserReg" />
+  </message>
+  <message name="UserRegSoapOut">
+    <part name="parameters" element="tns:UserRegResponse" />
+  </message>
+  <message name="GetUserInfoByIDSoapIn">
+    <part name="parameters" element="tns:GetUserInfoByID" />
+  </message>
+  <message name="GetUserInfoByIDSoapOut">
+    <part name="parameters" element="tns:GetUserInfoByIDResponse" />
+  </message>
+  <message name="UpdateUserInfoSoapIn">
+    <part name="parameters" element="tns:UpdateUserInfo" />
+  </message>
+  <message name="UpdateUserInfoSoapOut">
+    <part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </message>
+  <message name="UpdateLatitudeAndLongitudeSoapIn">
+    <part name="parameters" element="tns:UpdateLatitudeAndLongitude" />
+  </message>
+  <message name="UpdateLatitudeAndLongitudeSoapOut">
+    <part name="parameters" element="tns:UpdateLatitudeAndLongitudeResponse" />
+  </message>
+  <message name="GetAllRecruitsSoapIn">
+    <part name="parameters" element="tns:GetAllRecruits" />
+  </message>
+  <message name="GetAllRecruitsSoapOut">
+    <part name="parameters" element="tns:GetAllRecruitsResponse" />
+  </message>
+  <message name="AddRecruitSoapIn">
+    <part name="parameters" element="tns:AddRecruit" />
+  </message>
+  <message name="AddRecruitSoapOut">
+    <part name="parameters" element="tns:AddRecruitResponse" />
+  </message>
+  <message name="GetMyRecruitsSoapIn">
+    <part name="parameters" element="tns:GetMyRecruits" />
+  </message>
+  <message name="GetMyRecruitsSoapOut">
+    <part name="parameters" element="tns:GetMyRecruitsResponse" />
+  </message>
+  <message name="AddOrUpdateUsers_relSoapIn">
+    <part name="parameters" element="tns:AddOrUpdateUsers_rel" />
+  </message>
+  <message name="AddOrUpdateUsers_relSoapOut">
+    <part name="parameters" element="tns:AddOrUpdateUsers_relResponse" />
+  </message>
+  <message name="GetMyUsers_relSoapIn">
+    <part name="parameters" element="tns:GetMyUsers_rel" />
+  </message>
+  <message name="GetMyUsers_relSoapOut">
+    <part name="parameters" element="tns:GetMyUsers_relResponse" />
+  </message>
+  <message name="DelUsers_relSoapIn">
+    <part name="parameters" element="tns:DelUsers_rel" />
+  </message>
+  <message name="DelUsers_relSoapOut">
+    <part name="parameters" element="tns:DelUsers_relResponse" />
+  </message>
+  <message name="GetUsers_relSoapIn">
+    <part name="parameters" element="tns:GetUsers_rel" />
+  </message>
+  <message name="GetUsers_relSoapOut">
+    <part name="parameters" element="tns:GetUsers_relResponse" />
+  </message>
+  <portType name="WebService1Soap">
+    <operation name="UserReg">
+      <input message="tns:UserRegSoapIn" />
+      <output message="tns:UserRegSoapOut" />
+    </operation>
+    <operation name="GetUserInfoByID">
+      <input message="tns:GetUserInfoByIDSoapIn" />
+      <output message="tns:GetUserInfoByIDSoapOut" />
+    </operation>
+    <operation name="UpdateUserInfo">
+      <input message="tns:UpdateUserInfoSoapIn" />
+      <output message="tns:UpdateUserInfoSoapOut" />
+    </operation>
+    <operation name="UpdateLatitudeAndLongitude">
+      <input message="tns:UpdateLatitudeAndLongitudeSoapIn" />
+      <output message="tns:UpdateLatitudeAndLongitudeSoapOut" />
+    </operation>
+    <operation name="GetAllRecruits">
+      <input message="tns:GetAllRecruitsSoapIn" />
+      <output message="tns:GetAllRecruitsSoapOut" />
+    </operation>
+    <operation name="AddRecruit">
+      <input message="tns:AddRecruitSoapIn" />
+      <output message="tns:AddRecruitSoapOut" />
+    </operation>
+    <operation name="GetMyRecruits">
+      <input message="tns:GetMyRecruitsSoapIn" />
+      <output message="tns:GetMyRecruitsSoapOut" />
+    </operation>
+    <operation name="AddOrUpdateUsers_rel">
+      <input message="tns:AddOrUpdateUsers_relSoapIn" />
+      <output message="tns:AddOrUpdateUsers_relSoapOut" />
+    </operation>
+    <operation name="GetMyUsers_rel">
+      <input message="tns:GetMyUsers_relSoapIn" />
+      <output message="tns:GetMyUsers_relSoapOut" />
+    </operation>
+    <operation name="DelUsers_rel">
+      <input message="tns:DelUsers_relSoapIn" />
+      <output message="tns:DelUsers_relSoapOut" />
+    </operation>
+    <operation name="GetUsers_rel">
+      <input message="tns:GetUsers_relSoapIn" />
+      <output message="tns:GetUsers_relSoapOut" />
+    </operation>
+  </portType>
+  <binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="UserReg">
+      <soap:operation soapAction="http://tempuri.org/UserReg" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetUserInfoByID">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfoByID" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateLatitudeAndLongitude">
+      <soap:operation soapAction="http://tempuri.org/UpdateLatitudeAndLongitude" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllRecruits">
+      <soap:operation soapAction="http://tempuri.org/GetAllRecruits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddRecruit">
+      <soap:operation soapAction="http://tempuri.org/AddRecruit" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetMyRecruits">
+      <soap:operation soapAction="http://tempuri.org/GetMyRecruits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddOrUpdateUsers_rel">
+      <soap:operation soapAction="http://tempuri.org/AddOrUpdateUsers_rel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetMyUsers_rel">
+      <soap:operation soapAction="http://tempuri.org/GetMyUsers_rel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DelUsers_rel">
+      <soap:operation soapAction="http://tempuri.org/DelUsers_rel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetUsers_rel">
+      <soap:operation soapAction="http://tempuri.org/GetUsers_rel" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="UserReg">
+      <soap12:operation soapAction="http://tempuri.org/UserReg" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetUserInfoByID">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfoByID" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateLatitudeAndLongitude">
+      <soap12:operation soapAction="http://tempuri.org/UpdateLatitudeAndLongitude" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllRecruits">
+      <soap12:operation soapAction="http://tempuri.org/GetAllRecruits" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddRecruit">
+      <soap12:operation soapAction="http://tempuri.org/AddRecruit" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetMyRecruits">
+      <soap12:operation soapAction="http://tempuri.org/GetMyRecruits" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddOrUpdateUsers_rel">
+      <soap12:operation soapAction="http://tempuri.org/AddOrUpdateUsers_rel" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetMyUsers_rel">
+      <soap12:operation soapAction="http://tempuri.org/GetMyUsers_rel" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DelUsers_rel">
+      <soap12:operation soapAction="http://tempuri.org/DelUsers_rel" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetUsers_rel">
+      <soap12:operation soapAction="http://tempuri.org/GetUsers_rel" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WebService1">
+    <port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://192.168.199.163:3364/WebService1.asmx" />
+    </port>
+    <port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://192.168.199.163:3364/WebService1.asmx" />
+    </port>
+  </service>
+</definitions>

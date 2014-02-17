@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		219CD5870000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252DE2250000000000000000 /* UIKit.framework */; };
+		33278BA00000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3855800000000000000000 /* MapKit.framework */; };
+		1865E1520000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF6EDF00000000000000000 /* Foundation.framework */; };
+		BD0C39B00000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61D03900000000000000000 /* CoreGraphics.framework */; };
+		3493C65C0000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3824D2FA0000000000000000 /* Info.plist */; };
+		20A9AC4D0000000000000000 /* AllRecruitViewControllerForMale.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243AB8EB0000000000000000 /* AllRecruitViewControllerForMale.xib */; };
+		15C3A3570000000000000000 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1954AFF50000000000000000 /* LoginViewController.xib */; };
+		30372D4E0000000000000000 /* MessageManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C839EC0000000000000000 /* MessageManagementViewController.xib */; };
+		1E2F0B1C0000000000000000 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C017BA0000000000000000 /* MessageViewController.xib */; };
+		1FAB3CC10000000000000000 /* MyRecruitedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 233C495F0000000000000000 /* MyRecruitedViewController.xib */; };
+		1134272D0000000000000000 /* OtherUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C533CB0000000000000000 /* OtherUserInfoViewController.xib */; };
+		149250AF0000000000000000 /* PublisherInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18235D4D0000000000000000 /* PublisherInfo.xib */; };
+		10CE60F50000000000000000 /* RecruitDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145F6D930000000000000000 /* RecruitDetailViewController.xib */; };
+		1CFDB8740000000000000000 /* RecruitHeroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208EC5120000000000000000 /* RecruitHeroViewController.xib */; };
+		76489A400000000000000000 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF5964200000000000000000 /* SplashScreenViewController.xib */; };
+		731A68800000000000000000 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC2B32600000000000000000 /* SettingViewController.xib */; };
+		51CCB8F00000000000000000 /* MyFirendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ADD82D00000000000000000 /* MyFirendsViewController.xib */; };
+		132E1AEB0000000000000000 /* .DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = 16BF27890000000000000000 /* .DS_Store */; };
+		1F9055860000000000000000 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 232162240000000000000000 /* Default-568h@2x.png */; };
+		DBB167000000000000000000 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 114C230E0000000000000000 /* Icon.png */; };
+		3132B1800000000000000000 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C3BE1E0000000000000000 /* Icon@2x.png */; };
+		3F4400DC0000000000000000 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D50D7A00000000000000000 /* Icon-60@2x.png */; };
+		2D6EC1C60000000000000000 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FFCE640000000000000000 /* Icon-Small.png */; };
+		1B9982B00000000000000000 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F2A8F4E0000000000000000 /* Icon-Small@2x.png */; };
+		37EF04840000000000000000 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B8011220000000000000000 /* Icon-Small-40@2x.png */; };
+		3D2F25E30000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = C03281000000000000000000 /* AppDelegate.h */; };
+		25E6E2520000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977EEF00000000000000000 /* AppDelegate.m */; };
+		3B1A4AEA0000000000000000 /* AllRecruitViewControllerForMale.h in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB57880000000000000000 /* AllRecruitViewControllerForMale.h */; };
+		CBCA6E400000000000000000 /* AllRecruitViewControllerForMale.m in Sources */ = {isa = PBXBuildFile; fileRef = 104DB3820000000000000000 /* AllRecruitViewControllerForMale.m */; };
+		E6BBBA500000000000000000 /* LoginViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 11FCC8430000000000000000 /* LoginViewController.h */; };
+		3AB484B20000000000000000 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4591500000000000000000 /* LoginViewController.m */; };
+		170A06860000000000000000 /* MessageManagementViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B13240000000000000000 /* MessageManagementViewController.h */; };
+		2C0A8C020000000000000000 /* MessageManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B98A00000000000000000 /* MessageManagementViewController.m */; };
+		F4F43F600000000000000000 /* MessageViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 12E050940000000000000000 /* MessageViewController.h */; };
+		12AD6D780000000000000000 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 163E7A160000000000000000 /* MessageViewController.m */; };
+		6184FC100000000000000000 /* MyRecruitedViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 9A95C5F00000000000000000 /* MyRecruitedViewController.h */; };
+		1969C07C0000000000000000 /* MyRecruitedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFACD1A0000000000000000 /* MyRecruitedViewController.m */; };
+		1787C89F0000000000000000 /* OtherUserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1B18D53D0000000000000000 /* OtherUserInfoViewController.h */; };
+		3D091AC00000000000000000 /* OtherUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7619E4A00000000000000000 /* OtherUserInfoViewController.m */; };
+		27482CBC0000000000000000 /* PublisherInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9395A0000000000000000 /* PublisherInfo.h */; };
+		CA1F20000000000000000000 /* PublisherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DAE9000000000000000000 /* PublisherInfo.m */; };
+		3E2AAA150000000000000000 /* RecruitDetailViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB6B300000000000000000 /* RecruitDetailViewController.h */; };
+		117C1AD00000000000000000 /* RecruitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 150D276E0000000000000000 /* RecruitDetailViewController.m */; };
+		3DC4E3DD0000000000000000 /* RecruitHeroViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 155F07B00000000000000000 /* RecruitHeroViewController.h */; };
+		312FC6260000000000000000 /* RecruitHeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C0D2C40000000000000000 /* RecruitHeroViewController.m */; };
+		2F4DCE490000000000000000 /* SplashScreenViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 32DEDAE70000000000000000 /* SplashScreenViewController.h */; };
+		22B8B0920000000000000000 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649BD300000000000000000 /* SplashScreenViewController.m */; };
+		29F3F0400000000000000000 /* SettingViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 6304BA200000000000000000 /* SettingViewController.h */; };
+		17D2A79C0000000000000000 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63B43A0000000000000000 /* SettingViewController.m */; };
+		37B9360E0000000000000000 /* MyFirendsViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A42AC0000000000000000 /* MyFirendsViewController.h */; };
+		CEC9EA600000000000000000 /* MyFirendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 107DAB440000000000000000 /* MyFirendsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BAD84A00000000000000000 /* iYao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "iYao.app"; path = "iYao.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		252DE2250000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		6C3855800000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		1BF6EDF00000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		F61D03900000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		3824D2FA0000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		243AB8EB0000000000000000 /* AllRecruitViewControllerForMale.xib */ = {isa = PBXFileReference; name = "AllRecruitViewControllerForMale.xib"; path = "UIViewControllers/AllRecruitViewControllerForMale.xib"; sourceTree = "<group>"; };
+		1954AFF50000000000000000 /* LoginViewController.xib */ = {isa = PBXFileReference; name = "LoginViewController.xib"; path = "UIViewControllers/LoginViewController.xib"; sourceTree = "<group>"; };
+		33C839EC0000000000000000 /* MessageManagementViewController.xib */ = {isa = PBXFileReference; name = "MessageManagementViewController.xib"; path = "UIViewControllers/MessageManagementViewController.xib"; sourceTree = "<group>"; };
+		21C017BA0000000000000000 /* MessageViewController.xib */ = {isa = PBXFileReference; name = "MessageViewController.xib"; path = "UIViewControllers/MessageViewController.xib"; sourceTree = "<group>"; };
+		233C495F0000000000000000 /* MyRecruitedViewController.xib */ = {isa = PBXFileReference; name = "MyRecruitedViewController.xib"; path = "UIViewControllers/MyRecruitedViewController.xib"; sourceTree = "<group>"; };
+		14C533CB0000000000000000 /* OtherUserInfoViewController.xib */ = {isa = PBXFileReference; name = "OtherUserInfoViewController.xib"; path = "UIViewControllers/OtherUserInfoViewController.xib"; sourceTree = "<group>"; };
+		18235D4D0000000000000000 /* PublisherInfo.xib */ = {isa = PBXFileReference; name = "PublisherInfo.xib"; path = "UIViewControllers/PublisherInfo.xib"; sourceTree = "<group>"; };
+		145F6D930000000000000000 /* RecruitDetailViewController.xib */ = {isa = PBXFileReference; name = "RecruitDetailViewController.xib"; path = "UIViewControllers/RecruitDetailViewController.xib"; sourceTree = "<group>"; };
+		208EC5120000000000000000 /* RecruitHeroViewController.xib */ = {isa = PBXFileReference; name = "RecruitHeroViewController.xib"; path = "UIViewControllers/RecruitHeroViewController.xib"; sourceTree = "<group>"; };
+		AF5964200000000000000000 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; name = "SplashScreenViewController.xib"; path = "UIViewControllers/SplashScreenViewController.xib"; sourceTree = "<group>"; };
+		AC2B32600000000000000000 /* SettingViewController.xib */ = {isa = PBXFileReference; name = "SettingViewController.xib"; path = "UIViewControllers/SettingViewController.xib"; sourceTree = "<group>"; };
+		8ADD82D00000000000000000 /* MyFirendsViewController.xib */ = {isa = PBXFileReference; name = "MyFirendsViewController.xib"; path = "UIViewControllers/MyFirendsViewController.xib"; sourceTree = "<group>"; };
+		16BF27890000000000000000 /* .DS_Store */ = {isa = PBXFileReference; name = ".DS_Store"; path = ".DS_Store"; sourceTree = "<group>"; };
+		232162240000000000000000 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		114C230E0000000000000000 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon.png"; path = "Icon.png"; sourceTree = "<group>"; };
+		34C3BE1E0000000000000000 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		2D50D7A00000000000000000 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		30FFCE640000000000000000 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		1F2A8F4E0000000000000000 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		3B8011220000000000000000 /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-40@2x.png"; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
+		C03281000000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		2977EEF00000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		3EAB57880000000000000000 /* AllRecruitViewControllerForMale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AllRecruitViewControllerForMale.h"; path = "AllRecruitViewControllerForMale.h"; sourceTree = "<group>"; };
+		104DB3820000000000000000 /* AllRecruitViewControllerForMale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AllRecruitViewControllerForMale.m"; path = "AllRecruitViewControllerForMale.m"; sourceTree = "<group>"; };
+		11FCC8430000000000000000 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoginViewController.h"; path = "LoginViewController.h"; sourceTree = "<group>"; };
+		3E4591500000000000000000 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LoginViewController.m"; path = "LoginViewController.m"; sourceTree = "<group>"; };
+		1A9B13240000000000000000 /* MessageManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MessageManagementViewController.h"; path = "MessageManagementViewController.h"; sourceTree = "<group>"; };
+		2F9B98A00000000000000000 /* MessageManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MessageManagementViewController.m"; path = "MessageManagementViewController.m"; sourceTree = "<group>"; };
+		12E050940000000000000000 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MessageViewController.h"; path = "MessageViewController.h"; sourceTree = "<group>"; };
+		163E7A160000000000000000 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MessageViewController.m"; path = "MessageViewController.m"; sourceTree = "<group>"; };
+		9A95C5F00000000000000000 /* MyRecruitedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MyRecruitedViewController.h"; path = "MyRecruitedViewController.h"; sourceTree = "<group>"; };
+		1CFACD1A0000000000000000 /* MyRecruitedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MyRecruitedViewController.m"; path = "MyRecruitedViewController.m"; sourceTree = "<group>"; };
+		1B18D53D0000000000000000 /* OtherUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OtherUserInfoViewController.h"; path = "OtherUserInfoViewController.h"; sourceTree = "<group>"; };
+		7619E4A00000000000000000 /* OtherUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "OtherUserInfoViewController.m"; path = "OtherUserInfoViewController.m"; sourceTree = "<group>"; };
+		2AD9395A0000000000000000 /* PublisherInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PublisherInfo.h"; path = "PublisherInfo.h"; sourceTree = "<group>"; };
+		39DAE9000000000000000000 /* PublisherInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PublisherInfo.m"; path = "PublisherInfo.m"; sourceTree = "<group>"; };
+		1BBB6B300000000000000000 /* RecruitDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RecruitDetailViewController.h"; path = "RecruitDetailViewController.h"; sourceTree = "<group>"; };
+		150D276E0000000000000000 /* RecruitDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "RecruitDetailViewController.m"; path = "RecruitDetailViewController.m"; sourceTree = "<group>"; };
+		155F07B00000000000000000 /* RecruitHeroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RecruitHeroViewController.h"; path = "RecruitHeroViewController.h"; sourceTree = "<group>"; };
+		34C0D2C40000000000000000 /* RecruitHeroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "RecruitHeroViewController.m"; path = "RecruitHeroViewController.m"; sourceTree = "<group>"; };
+		32DEDAE70000000000000000 /* SplashScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SplashScreenViewController.h"; path = "SplashScreenViewController.h"; sourceTree = "<group>"; };
+		2649BD300000000000000000 /* SplashScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SplashScreenViewController.m"; path = "SplashScreenViewController.m"; sourceTree = "<group>"; };
+		6304BA200000000000000000 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SettingViewController.h"; path = "SettingViewController.h"; sourceTree = "<group>"; };
+		1B63B43A0000000000000000 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SettingViewController.m"; path = "SettingViewController.m"; sourceTree = "<group>"; };
+		3B4A42AC0000000000000000 /* MyFirendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MyFirendsViewController.h"; path = "MyFirendsViewController.h"; sourceTree = "<group>"; };
+		107DAB440000000000000000 /* MyFirendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MyFirendsViewController.m"; path = "MyFirendsViewController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		285C13E50000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219CD5870000000000000000 /* UIKit.framework in Frameworks */,
+				33278BA00000000000000000 /* MapKit.framework in Frameworks */,
+				1865E1520000000000000000 /* Foundation.framework in Frameworks */,
+				BD0C39B00000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		875857300000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				330F39BF0000000000000000 /* iYao */,
+				1328AB4D0000000000000000 /* Frameworks */,
+				3DC25F990000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DC25F990000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BAD84A00000000000000000 /* iYao.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		1328AB4D0000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				252DE2250000000000000000 /* UIKit.framework */,
+				6C3855800000000000000000 /* MapKit.framework */,
+				1BF6EDF00000000000000000 /* Foundation.framework */,
+				F61D03900000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		330F39BF0000000000000000 /* iYao */ = {
+			isa = PBXGroup;
+			children = (
+				16BF27890000000000000000 /* .DS_Store */,
+				3EAB57880000000000000000 /* AllRecruitViewControllerForMale.h */,
+				C03281000000000000000000 /* AppDelegate.h */,
+				232162240000000000000000 /* Default-568h@2x.png */,
+				114C230E0000000000000000 /* Icon.png */,
+				34C3BE1E0000000000000000 /* Icon@2x.png */,
+				2D50D7A00000000000000000 /* Icon-60@2x.png */,
+				30FFCE640000000000000000 /* Icon-Small.png */,
+				1F2A8F4E0000000000000000 /* Icon-Small@2x.png */,
+				3B8011220000000000000000 /* Icon-Small-40@2x.png */,
+				3824D2FA0000000000000000 /* Info.plist */,
+				11FCC8430000000000000000 /* LoginViewController.h */,
+				1A9B13240000000000000000 /* MessageManagementViewController.h */,
+				12E050940000000000000000 /* MessageViewController.h */,
+				3B4A42AC0000000000000000 /* MyFirendsViewController.h */,
+				9A95C5F00000000000000000 /* MyRecruitedViewController.h */,
+				1B18D53D0000000000000000 /* OtherUserInfoViewController.h */,
+				2AD9395A0000000000000000 /* PublisherInfo.h */,
+				1BBB6B300000000000000000 /* RecruitDetailViewController.h */,
+				155F07B00000000000000000 /* RecruitHeroViewController.h */,
+				6304BA200000000000000000 /* SettingViewController.h */,
+				32DEDAE70000000000000000 /* SplashScreenViewController.h */,
+				1D15B4550000000000000000 /* Supporting Files */,
+				39A1049F0000000000000000 /* UIViewControllers */,
+			);
+			name = "iYao";
+			sourceTree = "<group>";
+		};
+		39A1049F0000000000000000 /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				243AB8EB0000000000000000 /* AllRecruitViewControllerForMale.xib */,
+				1954AFF50000000000000000 /* LoginViewController.xib */,
+				33C839EC0000000000000000 /* MessageManagementViewController.xib */,
+				21C017BA0000000000000000 /* MessageViewController.xib */,
+				8ADD82D00000000000000000 /* MyFirendsViewController.xib */,
+				233C495F0000000000000000 /* MyRecruitedViewController.xib */,
+				14C533CB0000000000000000 /* OtherUserInfoViewController.xib */,
+				18235D4D0000000000000000 /* PublisherInfo.xib */,
+				145F6D930000000000000000 /* RecruitDetailViewController.xib */,
+				208EC5120000000000000000 /* RecruitHeroViewController.xib */,
+				AC2B32600000000000000000 /* SettingViewController.xib */,
+				AF5964200000000000000000 /* SplashScreenViewController.xib */,
+			);
+			name = "UIViewControllers";
+			sourceTree = "<group>";
+		};
+		1D15B4550000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				104DB3820000000000000000 /* AllRecruitViewControllerForMale.m */,
+				2977EEF00000000000000000 /* AppDelegate.m */,
+				3E4591500000000000000000 /* LoginViewController.m */,
+				2F9B98A00000000000000000 /* MessageManagementViewController.m */,
+				163E7A160000000000000000 /* MessageViewController.m */,
+				107DAB440000000000000000 /* MyFirendsViewController.m */,
+				1CFACD1A0000000000000000 /* MyRecruitedViewController.m */,
+				7619E4A00000000000000000 /* OtherUserInfoViewController.m */,
+				39DAE9000000000000000000 /* PublisherInfo.m */,
+				150D276E0000000000000000 /* RecruitDetailViewController.m */,
+				34C0D2C40000000000000000 /* RecruitHeroViewController.m */,
+				1B63B43A0000000000000000 /* SettingViewController.m */,
+				2649BD300000000000000000 /* SplashScreenViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F23AA030000000000000000 /* iYao */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30FA5EC60000000000000000 /* Build configuration list for PBXNativeTarget "iYao" */;
+			buildPhases = (
+				1686D4CF0000000000000000 /* Sources */,
+				285C13E50000000000000000 /* Frameworks */,
+				3F71745A0000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iYao";
+			productName = "iYao";
+			productReference = 3BAD84A00000000000000000 /* iYao.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		347084290000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 264738EC0000000000000000 /* Build configuration list for PBXProject "iYao" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 875857300000000000000000;
+			productRefGroup = 3DC25F990000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F23AA030000000000000000 /* iYao */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F71745A0000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3493C65C0000000000000000 /* Info.plist in Resources */,
+				20A9AC4D0000000000000000 /* AllRecruitViewControllerForMale.xib in Resources */,
+				15C3A3570000000000000000 /* LoginViewController.xib in Resources */,
+				30372D4E0000000000000000 /* MessageManagementViewController.xib in Resources */,
+				1E2F0B1C0000000000000000 /* MessageViewController.xib in Resources */,
+				1FAB3CC10000000000000000 /* MyRecruitedViewController.xib in Resources */,
+				1134272D0000000000000000 /* OtherUserInfoViewController.xib in Resources */,
+				149250AF0000000000000000 /* PublisherInfo.xib in Resources */,
+				10CE60F50000000000000000 /* RecruitDetailViewController.xib in Resources */,
+				1CFDB8740000000000000000 /* RecruitHeroViewController.xib in Resources */,
+				76489A400000000000000000 /* SplashScreenViewController.xib in Resources */,
+				731A68800000000000000000 /* SettingViewController.xib in Resources */,
+				51CCB8F00000000000000000 /* MyFirendsViewController.xib in Resources */,
+				132E1AEB0000000000000000 /* .DS_Store in Resources */,
+				1F9055860000000000000000 /* Default-568h@2x.png in Resources */,
+				DBB167000000000000000000 /* Icon.png in Resources */,
+				3132B1800000000000000000 /* Icon@2x.png in Resources */,
+				3F4400DC0000000000000000 /* Icon-60@2x.png in Resources */,
+				2D6EC1C60000000000000000 /* Icon-Small.png in Resources */,
+				1B9982B00000000000000000 /* Icon-Small@2x.png in Resources */,
+				37EF04840000000000000000 /* Icon-Small-40@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1686D4CF0000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2F25E30000000000000000 /* AppDelegate.h in Sources */,
+				25E6E2520000000000000000 /* AppDelegate.m in Sources */,
+				3B1A4AEA0000000000000000 /* AllRecruitViewControllerForMale.h in Sources */,
+				CBCA6E400000000000000000 /* AllRecruitViewControllerForMale.m in Sources */,
+				E6BBBA500000000000000000 /* LoginViewController.h in Sources */,
+				3AB484B20000000000000000 /* LoginViewController.m in Sources */,
+				170A06860000000000000000 /* MessageManagementViewController.h in Sources */,
+				2C0A8C020000000000000000 /* MessageManagementViewController.m in Sources */,
+				F4F43F600000000000000000 /* MessageViewController.h in Sources */,
+				12AD6D780000000000000000 /* MessageViewController.m in Sources */,
+				6184FC100000000000000000 /* MyRecruitedViewController.h in Sources */,
+				1969C07C0000000000000000 /* MyRecruitedViewController.m in Sources */,
+				1787C89F0000000000000000 /* OtherUserInfoViewController.h in Sources */,
+				3D091AC00000000000000000 /* OtherUserInfoViewController.m in Sources */,
+				27482CBC0000000000000000 /* PublisherInfo.h in Sources */,
+				CA1F20000000000000000000 /* PublisherInfo.m in Sources */,
+				3E2AAA150000000000000000 /* RecruitDetailViewController.h in Sources */,
+				117C1AD00000000000000000 /* RecruitDetailViewController.m in Sources */,
+				3DC4E3DD0000000000000000 /* RecruitHeroViewController.h in Sources */,
+				312FC6260000000000000000 /* RecruitHeroViewController.m in Sources */,
+				2F4DCE490000000000000000 /* SplashScreenViewController.h in Sources */,
+				22B8B0920000000000000000 /* SplashScreenViewController.m in Sources */,
+				29F3F0400000000000000000 /* SettingViewController.h in Sources */,
+				17D2A79C0000000000000000 /* SettingViewController.m in Sources */,
+				37B9360E0000000000000000 /* MyFirendsViewController.h in Sources */,
+				CEC9EA600000000000000000 /* MyFirendsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27C36A910000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		1B9413120000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "iYao";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		264738EC0000000000000000 /* Build configuration list for PBXProject "iYao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27C36A910000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		30FA5EC60000000000000000 /* Build configuration list for PBXNativeTarget "iYao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9413120000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 347084290000000000000000 /* Project object */;
+}

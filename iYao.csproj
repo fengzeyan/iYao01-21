@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2193A005-21B7-4F29-AF75-48702C7CC5AD}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>iYao</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
+    <AssemblyName>iYao</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <AssemblyName>iYao</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>true</MtouchDebug>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: PEIJUN LU (4LY25F539D)</CodesignKey>
+    <CodesignProvision>0EAE8217-6EB9-4BD7-ABBA-5E990ABF1784</CodesignProvision>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
+    <IpaPackageName>
+    </IpaPackageName>
+    <AssemblyName>iYao</AssemblyName>
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <ConsolePause>false</ConsolePause>
+    <AssemblyName>SinaWeiboSDKForMonoTester</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <BuildIpa>true</BuildIpa>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <AssemblyName>SinaWeiboSDKForMonoTester</AssemblyName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <AssemblyName>SinaWeiboSDKForMonoTester</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\..\Desktop\MonoDLL\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Desktop\MonoDLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\..\Desktop\MonoDLL\RestSharp.MonoTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="SDWebImage">
+      <HintPath>..\..\Desktop\MonoDLL\SDWebImage.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite">
+      <HintPath>..\..\Desktop\MonoDLL\SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="WeiboSDKForMonotouch">
+      <HintPath>..\..\Desktop\MonoDLL\WeiboSDKForMonotouch.dll</HintPath>
+    </Reference>
+    <Reference Include="StriveEngine.U3D">
+      <HintPath>..\..\Desktop\monoDLL\StriveEngine.U3D.dll</HintPath>
+    </Reference>
+    <Reference Include="iYaoInPutBarLibrary">
+      <HintPath>..\..\Desktop\monoDLL\iYaoInPutBarLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Images\" />
+    <Folder Include="Classes\" />
+    <Folder Include="DataSource\" />
+    <Folder Include="UIViewControllers\" />
+    <Folder Include="Images\MainPage\" />
+    <Folder Include="Images\MessageManagement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Web References\iYaoWebService\WebService1.wsdl" />
+    <None Include="Web References\iYaoWebService\WebService1.disco" />
+    <None Include="Web References\iYaoWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="MyHashTable.cs" />
+    <Compile Include="iYaoLocationDelegate.cs" />
+    <Compile Include="Classes\LocalUser.cs" />
+    <Compile Include="Classes\Recruit.cs" />
+    <Compile Include="Classes\Common.cs" />
+    <Compile Include="Classes\LegendinMessageCell.cs" />
+    <Compile Include="DataSource\AllRecruitTableViewDataSource.cs" />
+    <Compile Include="Web References\iYaoWebService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\BadgeView.cs" />
+    <Compile Include="DataSource\RecommandMessageTableViewSource.cs" />
+    <Compile Include="DataSource\NormalMessageTableViewSource.cs" />
+    <Compile Include="DataSource\MessageTableViewSource.cs" />
+    <Compile Include="Classes\LegendinMessage.cs" />
+    <Compile Include="UIViewControllers\AllRecruitViewControllerForMale.cs" />
+    <Compile Include="UIViewControllers\AllRecruitViewControllerForMale.designer.cs">
+      <DependentUpon>AllRecruitViewControllerForMale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\LoginViewController.cs" />
+    <Compile Include="UIViewControllers\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\MessageManagementViewController.cs" />
+    <Compile Include="UIViewControllers\MessageViewController.cs" />
+    <Compile Include="UIViewControllers\MyRecruitedViewController.cs" />
+    <Compile Include="UIViewControllers\MyRecruitedViewController.designer.cs">
+      <DependentUpon>MyRecruitedViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\OtherUserInfoViewController.cs" />
+    <Compile Include="UIViewControllers\OtherUserInfoViewController.designer.cs">
+      <DependentUpon>OtherUserInfoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\PublisherInfo.cs" />
+    <Compile Include="UIViewControllers\PublisherInfo.designer.cs">
+      <DependentUpon>PublisherInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\RecruitDetailViewController.cs" />
+    <Compile Include="UIViewControllers\RecruitDetailViewController.designer.cs">
+      <DependentUpon>RecruitDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\RecruitHeroViewController.cs" />
+    <Compile Include="UIViewControllers\RecruitHeroViewController.designer.cs">
+      <DependentUpon>RecruitHeroViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\SplashScreenViewController.cs" />
+    <Compile Include="UIViewControllers\SplashScreenViewController.designer.cs">
+      <DependentUpon>SplashScreenViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\SettingViewController.cs" />
+    <Compile Include="UIViewControllers\SettingViewController.designer.cs">
+      <DependentUpon>SettingViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\MyFirendsViewController.cs" />
+    <Compile Include="UIViewControllers\MyFirendsViewController.designer.cs">
+      <DependentUpon>MyFirendsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIViewControllers\MainPageViewController_old.cs" />
+    <Compile Include="UIViewControllers\MainPageViewContorller.cs" />
+    <Compile Include="UIViewControllers\MessageManagementViewController.designer.cs">
+      <DependentUpon>MessageManagementViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="UIViewControllers\AllRecruitViewControllerForMale.xib" />
+    <InterfaceDefinition Include="UIViewControllers\LoginViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\MessageManagementViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\MyRecruitedViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\OtherUserInfoViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\PublisherInfo.xib" />
+    <InterfaceDefinition Include="UIViewControllers\RecruitDetailViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\RecruitHeroViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\SplashScreenViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\SettingViewController.xib" />
+    <InterfaceDefinition Include="UIViewControllers\MyFirendsViewController.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Images\640x1136.png" />
+    <BundleResource Include="Images\green.png" />
+    <BundleResource Include="Images\Camera.png" />
+    <BundleResource Include="Images\Camera%402x.png" />
+    <BundleResource Include="Images\buttonback%402x.png" />
+    <BundleResource Include="Images\buttonback.png" />
+    <BundleResource Include="Images\grey1.png" />
+    <BundleResource Include="Images\grey.png" />
+    <BundleResource Include="Resources\.DS_Store" />
+    <BundleResource Include="Images\logo.png" />
+    <BundleResource Include="Images\logo%402x.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Images\MainPage\one.png" />
+    <BundleResource Include="Images\MainPage\two.png" />
+    <BundleResource Include="Images\MainPage\three.png" />
+    <BundleResource Include="Images\MainPage\four.png" />
+    <BundleResource Include="Images\MainPage\five.png" />
+    <BundleResource Include="Images\MessageManagement\normal.png" />
+    <BundleResource Include="Images\MessageManagement\normal%402x.png" />
+    <BundleResource Include="Images\MessageManagement\recommand.png" />
+    <BundleResource Include="Images\MessageManagement\recommand%402x.png" />
+    <BundleResource Include="Images\MessageManagement\system.png" />
+    <BundleResource Include="Images\MessageManagement\system%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.199.163:3364/WebService1.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\iYaoWebService</RelPath>
+      <UpdateFromURL>http://192.168.199.163:3364/WebService1.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+</Project>

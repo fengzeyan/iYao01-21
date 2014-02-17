@@ -1,0 +1,223 @@
+using System;
+using System.Drawing;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using iYao.iYaoWebService;
+using PHFComposeBarView;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace iYao
+{
+	public partial class MessageViewController : UIViewController
+	{
+		void KeyboardWillToggle (object sender, UIKeyboardEventArgs e)
+		{
+			var duration = e.AnimationDuration;
+			var startFrame = e.FrameBegin;
+			var endFrame = e.FrameEnd;
+			int signCorrection = 1;
+
+			if (startFrame.Y < 0 || startFrame.X < 0 || endFrame.Y < 0 || endFrame.X < 0)
+				signCorrection = -1;
+
+			var widthChange = (endFrame.X - startFrame.X) * signCorrection;
+			var heightChange = (endFrame.Y - startFrame.Y) * signCorrection;
+			//var sizeChange = heightChange; //UIDevice.CurrentDevice.Orientation == UIDeviceOrientation.Portrait ? heightChange : widthChange;
+			var sizeChange = InterfaceOrientation == UIInterfaceOrientation.Portrait ? heightChange : widthChange;
+//			 sizeChange+=64;
+			var newContainerFrame = View.Frame;
+			newContainerFrame = new RectangleF (View.Frame.X, View.Frame.Y, View.Frame.Width, View.Frame.Height + sizeChange);
+			var offsetY = Math.Max (0.0f, tableView.ContentSize.Height - tableView.Frame.Size.Height - sizeChange);
+			var newTextViewContentOffset = new PointF (0, offsetY);
+			UIView.Animate (duration, 0, UIViewAnimationOptions.BeginFromCurrentState, () => View.Frame = newContainerFrame, null);
+//			newTextViewContentOffset = new PointF (newTextViewContentOffset.X, newTextViewContentOffset.Y + 64);
+			Console.WriteLine ("newTextViewContentOffset"+newTextViewContentOffset.Y);
+//			tableView.SetContentOffset (newTextViewContentOffset, true);
+		}
+
+		UITableView tableView;
+
+		public MessageViewController () : base ("MessageViewController", null)
+		{
+			keyboarWillShowNot = UIKeyboard.Notifications.ObserveWillShow (KeyboardWillToggle);
+			keyboarWillHideNot = UIKeyboard.Notifications.ObserveWillHide (KeyboardWillToggle);
+		}
+
+		NSObject keyboarWillShowNot;
+		NSObject keyboarWillHideNot;
+		public Users fromUser;
+		public Users toUser;
+		public Recruit recruit;
+		ComposeBarView composeBarView;
+
+		public override void DidReceiveMemoryWarning ()
+		{
+			// Releases the view if it doesn't have a superview.
+			base.DidReceiveMemoryWarning ();
+			
+			// Release any cached data, images, etc that aren't in use.
+		}
+
+		public void ReLoadMessageData ()
+		{
+			var re = AppDelegate.db.QueryAsync<LocalMessage > ("SELECT * FROM LocalMessage WHERE (toUserID=? and fromUserID=?) or (toUserID=? and fromUserID=?)", objarray).Result;
+
+			InvokeOnMainThread (delegate {
+				source = new MessageTableViewSource (re, this);
+				tableView.Source = source;
+				tableView.ReloadData ();
+			});
+		}
+
+		string[] objarray;
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			objarray	= new string[]{ toUser.idstr, fromUser.idstr, fromUser.idstr, toUser.idstr };
+
+			Common.MSGViewController = this;
+
+			btnBack.TouchUpInside += BackToPrevious;
+			UITapGestureRecognizer tap = new UITapGestureRecognizer ();
+			tap.AddTarget (() => {
+				this.View.EndEditing (true);
+			});
+			this.View.AddGestureRecognizer (tap);
+			composeBarView = new ComposeBarView (new RectangleF (0, View.Bounds.Height - ComposeBarView.InitialHeight, View.Bounds.Width, ComposeBarView.InitialHeight)) {
+				MaxCharCount = 160,
+				MaxLinesCount = 5,
+				Placeholder = "Type something...",
+				UtilityButtonImage = UIImage.FromBundle ("Images/Camera")
+			};
+
+			// This will handle when the user taps the main button
+			composeBarView.DidPressButton += (sender, e) => {
+
+
+
+				var composeBar = sender as ComposeBarView;
+
+//				Console.WriteLine ("Main button pressed. Text:\n{0}", composeBar.Text);
+				composeBar.ResignFirstResponder ();
+
+				string msgID = Guid.NewGuid ().ToString ();
+
+				LegendinBaseMessage lmsg = new LegendinBaseMessage ();
+
+
+				lmsg.fromUserID = AppDelegate.currentUser.id.ToString ();
+
+				lmsg.toUserID = toUser.idstr;
+				lmsg.messageBody = composeBar.Text;
+				lmsg.messageID = msgID;
+				lmsg.messageType = MessageType.ToUser;
+
+				lmsg.SendTime = DateTime.Now;
+				string msgBody = JsonConvert.SerializeObject (lmsg);
+
+
+
+
+//				Message message = new Message (Message.CommandHeader.SendMessage, 1, 1,msgBody);
+				LocalMessage cellMessage = new LocalMessage ();
+				cellMessage.fromUserID = lmsg.fromUserID;
+				cellMessage.messageBody = composeBar.Text;
+				cellMessage.messageType = MessageType.ToUser;
+				cellMessage.SendTime = DateTime.Now;
+				cellMessage.toUserID = toUser.idstr;
+				cellMessage.MessageID = msgID;
+				source.messageList.Add (cellMessage);
+				//send to server
+				string msg = msgBody + "\0";// "\0" 表示一个消息的结尾
+				byte[] bMsg = System.Text.Encoding.UTF8.GetBytes (msg);//消息使用UTF-8编码
+				Common.tcpPassiveEngine.SendMessageToServer (bMsg);
+				AppDelegate.db.InsertAsync (cellMessage).ContinueWith (t2 => {
+					if (t2.Exception != null) {
+						Console.WriteLine (t2.Exception.InnerException.ToString ());
+					}
+				});
+				composeBar.Text = string.Empty;
+				tableView.ReloadData ();
+			
+			};
+
+			// This will handle when the user taps the Utility button in this case a CameraButton
+			composeBarView.DidPressUtilityButton += (sender, e) => {
+				Console.WriteLine ("Utility button pressed");
+			};
+
+
+			tableView = new UITableView ();
+			//加载本地消息数据
+			var re = AppDelegate.db.QueryAsync<LocalMessage > ("SELECT * FROM LocalMessage WHERE (toUserID=? and fromUserID=?) or (toUserID=? and fromUserID=?)", objarray).Result;
+//			SELECT * FROM LocalMessage WHERE (toUserID='3978016657' and fromUserID='2158569197') or (toUserID='2158569197' and fromUserID='3978016657')
+//			var messageResult=	AppDelegate.db.Table<LocalMessage> ().Where (v=> (v.fromUserID==fromUser.idstr && v.toUserID==toUser.idstr )|| (v.fromUserID==toUser.idstr && v.toUserID==fromUser.idstr )  );
+
+
+			//减去104的是因为状态栏、导航栏、和输入框
+			tableView.Frame = new RectangleF (0, 64, 320, UIScreen.MainScreen.Bounds.Height - 104);
+			List<LocalMessage> datas = new  List<LocalMessage> ();
+
+//			messageResult.ToListAsync ().ContinueWith (t => {
+//			
+//				if(t.Result!=null)
+//				{
+//					datas=t.Result;
+//				}
+//			});
+			datas.AddRange (re);
+
+			if (recruit != null) {
+				LocalMessage msg = new LocalMessage ();
+				msg.fromUserID = AppDelegate.currentUser.idstr;
+				msg.messageBody = "小帅哥" + AppDelegate.currentUser.name + "愿意帮你" + recruit.Target.RecruitTargetDisplayName;
+				msg.messageType = MessageType.Apply;
+				msg.toUserID = toUser.idstr;
+				msg.SendTime = DateTime.Now;
+				datas.Add (msg);
+			}
+
+
+			source = new MessageTableViewSource (datas, this);
+			tableView.Source = source;
+			View.AddSubview (tableView);
+			View.AddSubview (composeBarView);
+
+
+
+
+			// Perform any additional setup after loading the view, typically from a nib.
+		}
+
+		MessageTableViewSource source;
+
+		void AddMoreDatas ()
+		{
+			for (int i = 0; i < 10000; i++) {
+				LocalMessage cellMessage = new LocalMessage ();
+				cellMessage.fromUserID = fromUser.idstr;
+				cellMessage.messageBody = i.ToString ();
+				cellMessage.messageType = MessageType.ToUser;
+				cellMessage.SendTime = DateTime.Now;
+				cellMessage.toUserID = toUser.idstr;
+				cellMessage.MessageID = Guid.NewGuid ().ToString ();
+				source.messageList.Add (cellMessage);
+				AppDelegate.db.InsertAsync (cellMessage).ContinueWith (t2 => {
+					if (t2.Exception != null) {
+						Console.WriteLine (t2.Exception.InnerException.ToString ());
+					}
+				});
+			}
+
+		}
+
+		void BackToPrevious (object sender, EventArgs e)
+		{
+//			AddMoreDatas ();
+			this.DismissViewController (true, null);
+		}
+	}
+}
+

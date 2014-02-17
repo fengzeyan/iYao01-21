@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application-identifier</key>
+	<string>BQMEF9NA74.cn.legendin.iyao</string>
+	<key>com.apple.developer.default-data-protection</key>
+	<string>NSFileProtectionComplete</string>
+	<key>com.apple.developer.pass-type-identifiers</key>
+	<array>
+		<string>BQMEF9NA74.cn.legendin.iyao</string>
+	</array>
+	<key>com.apple.developer.ubiquity-container-identifiers</key>
+	<array>
+		<string>BQMEF9NA74.cn.legendin.iyao</string>
+	</array>
+	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
+	<string>BQMEF9NA74.cn.legendin.iyao</string>
+	<key>get-task-allow</key>
+	<true/>
+	<key>inter-app-audio</key>
+	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>BQMEF9NA74.cn.legendin.iyao</string>
+	</array>
+</dict>
+</plist>
