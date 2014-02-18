@@ -1,20 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.6.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DataSource/MessageTableViewSource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UIViewControllers/MessageManagementViewController.cs">
     <Files>
       <File FileName="UIViewControllers/MessageManagementViewController.cs" Line="1" Column="1" />
       <File FileName="UIViewControllers/MessageViewController.cs" Line="1" Column="1" />
-      <File FileName="DataSource/MessageTableViewSource.cs" Line="62" Column="4" />
+      <File FileName="DataSource/MessageTableViewSource.cs" Line="1" Column="1" />
       <File FileName="UIViewControllers/MainPageViewContorller.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/fengzeyan/Downloads/iYao01-21/iYaoLocationDelegate.cs" line="54" column="5" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../Projects/CityShop/CityShop/AppDelegate.cs" line="188" offsetX="322" offsetY="3179" expression="remoteNotification" liveUpdate="False" />
-    <Watch file="../../../Projects/CityShop/CityShop/ViewsControllers/Product/ProductDetailViewController.cs" line="77" offsetX="615" offsetY="1444" expression="productInventory[0]" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

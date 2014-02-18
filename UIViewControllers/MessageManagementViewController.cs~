@@ -42,13 +42,13 @@ namespace iYao
 
 			if (AppDelegate.currentUser.gender == "f") {
 
-				UITabBar.Appearance.BarTintColor=UIColor.FromRGB (65, 27, 35);
-				UINavigationBar.Appearance.BarTintColor=UIColor.FromRGB (65, 27, 35);
-				tabBar.SelectedImageTintColor=UIColor.FromRGB (65, 27, 35);
+				UITabBar.Appearance.BarTintColor = UIColor.FromRGB (65, 27, 35);
+				UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB (65, 27, 35);
+				tabBar.SelectedImageTintColor = UIColor.FromRGB (65, 27, 35);
 			} else {
-				UINavigationBar.Appearance.BarTintColor=UIColor.FromRGB (49, 49, 49);
-				UITabBar.Appearance.BarTintColor=UIColor.FromRGB (49, 49, 49);
-				tabBar.SelectedImageTintColor=UIColor.FromRGB (49, 49, 49);
+				UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB (49, 49, 49);
+				UITabBar.Appearance.BarTintColor = UIColor.FromRGB (49, 49, 49);
+				tabBar.SelectedImageTintColor = UIColor.FromRGB (49, 49, 49);
 			}
 
 
@@ -65,7 +65,7 @@ namespace iYao
 
 
 			var latelyFriendsContactsList =	AppDelegate.db.QueryAsync<Contacts > ("SELECT * FROM Contacts inner JOIN Friends ON Contacts.id=Friends.id order by Friends.LatelyMessageTime");
-			var latelyApplyContactsList  =	AppDelegate.db.QueryAsync<Contacts > ("SELECT * FROM Contacts inner JOIN Stranger ON Contacts.id=Stranger.id order by Stranger.LatelyMessageTime");
+			var latelyApplyContactsList =	AppDelegate.db.QueryAsync<Contacts > ("SELECT * FROM Contacts inner JOIN Stranger ON Contacts.id=Stranger.id order by Stranger.LatelyMessageTime");
 
 
 			recommandTableView.Source = new RecommandMessageTableViewSource (latelyApplyContactsList.Result, this);
